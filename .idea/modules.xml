@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/rjsq/rjsq.iml" filepath="$PROJECT_DIR$/rjsq/rjsq.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rjsq/rjsq-grailsPlugins.iml" filepath="$PROJECT_DIR$/rjsq/rjsq-grailsPlugins.iml" />
+    </modules>
+  </component>
+</project>
