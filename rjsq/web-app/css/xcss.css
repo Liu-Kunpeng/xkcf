@@ -1,0 +1,178 @@
+@charset "utf-8";
+body{margin:0;padding:0;background:#f2f2f2;text-align:center;}
+
+img , video {            max-width: 100%;        }
+
+.xbxgj{ }
+
+
+.xbxgj  header {
+    width: 100%;
+    height: 48px;
+    line-height: 48px;
+    background: dodgerblue;
+    color: white;
+}
+
+.xbxgj  input:first-of-type {
+    margin-top: 60px;
+}
+
+.xbxgj  input[type=text] {
+    width: 96%;
+    height: 36px;
+    border: #ccc 1px solid;
+}
+.xbxgj  input[type=password] {
+    margin-top:40px;
+    width: 96%;
+    height: 36px;
+    border: #ccc 1px solid;
+}
+.xbxgj  input[type=submit] {
+    margin-top:20px;
+    width: 96%;
+    height: 36px;
+    font-size: 1em;
+    background: dodgerblue;
+    border:none;
+    color:white;
+    -webkit-appearance: none;
+
+}
+.xbxgj  input[type=submit]:active {
+    margin-top:19px;
+    background:#0099cc;
+    border:none;
+    -webkit-appearance: none;
+}
+/*cho.html*/
+@media only screen and (max-width: 275px){
+    .cho input{ -webkit-appearance: none;font-size: 1em;}
+    .cho input[type=text]{ width: 66%;height: 36px;border: #ccc 1px solid;margin-top:10px;font-size: 1em;-webkit-appearance: none;}
+    .cho input[type=file]{margin-top:10px; width: 86%;-webkit-appearance: none;}
+    .cho input[type=date]{margin-top:10px; width: 46%;height: 26px;border: #ccc 1px solid;-webkit-appearance: none;font-size: 1em;}
+    .cho .xselect{
+        margin-top: 10px;
+        width: 46%;
+        height: 26px;
+        border: #ccc 1px solid;
+        -webkit-appearance: none;
+        font-size: 1em;
+    }
+    .cho .xzzrq{text-align: left;font-size: 1em;width:56%;margin: auto;}
+    .cho .xspan{color:#666;padding-top:5px;}
+
+    .cho input[type=submit]{margin-top:20px;margin-bottom:10px;
+        width: 86%;
+        height: 36px;
+        font-size: 1em;
+        background: dodgerblue;
+        border:none;
+        color:white;
+        -webkit-appearance: none;font-size: 1em;
+    }
+    .cho input[type=number]{width:86%;height: 36px;border: #ccc 1px solid;margin-top:10px;font-size: 1em;-webkit-appearance: none;}
+    .tzje{width:60% !important;}
+    .cho .xfile{ margin-top:10px;
+        width: 86%;
+        height: 36px;
+        font-size: 1em;
+        background: dodgerblue;
+        border:none;
+        color:white;-webkit-appearance: none;}
+}
+
+.cho{width: 100%}
+.cho input{ -webkit-appearance: none;font-size: 1em;}
+
+@media only screen and (min-width: 275px) {
+    .cho input[type=text] {
+        width: 56%;
+        height: 36px;
+        border: #ccc 1px solid;
+        margin-top: 10px;
+        font-size: 1em;
+        -webkit-appearance: none;
+    }
+
+
+    .cho input[type=file] {
+        margin-top: 10px;
+        width: 96%;
+        -webkit-appearance: none;
+    }
+
+    .cho input[type=date] {
+        margin-top: 10px;
+        width: 66%;
+        height: 26px;
+        border: #ccc 1px solid;
+        -webkit-appearance: none;
+        font-size: 1em;
+    }
+    .cho .xselect{
+        margin-top: 10px;
+        width: 66%;
+        height: 26px;
+        border: #ccc 1px solid;
+        -webkit-appearance: none;
+        font-size: 1em;
+    }
+
+    .cho .xzzrq {
+        text-align: left;
+        font-size: 1em;
+        width: 96%;
+        margin: auto;
+    }
+
+    .cho .xspan {
+        color: #666;
+        padding-top: 5px;
+    }
+
+    .cho input[type=submit] {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        width: 96%;
+        height: 36px;
+        font-size: 1em;
+        background: dodgerblue;
+        border: none;
+        color: white;
+        -webkit-appearance: none;
+        font-size: 1em;
+    }
+
+    .cho input[type=number] {
+        width: 46%;
+        height: 36px;
+        border: #ccc 1px solid;
+        margin-top: 10px;
+        font-size: 1em;
+        -webkit-appearance: none;
+    }
+    .tzje{width:50% !important;}
+
+    .cho .xfile {
+        margin-top: 10px;
+        width: 96%;
+        height: 36px;
+        font-size: 1em;
+        background: dodgerblue;
+        border: none;
+        color: white;
+        -webkit-appearance: none;
+    }
+}
+.cho .img{padding-top:10px;width: 100%;margin:auto;height: auto;}
+.xzzrq select{
+    width: 50%;
+}
+.xzzrq input{
+    width: 50%;
+}
+input {
+    width: 50%;
+}
