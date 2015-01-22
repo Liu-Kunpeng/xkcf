@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/rjsq/rjsq.iml" filepath="$PROJECT_DIR$/rjsq/rjsq.iml" />
       <module fileurl="file://$PROJECT_DIR$/rjsq/rjsq-grailsPlugins.iml" filepath="$PROJECT_DIR$/rjsq/rjsq-grailsPlugins.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xkcj/xkcj.iml" filepath="$PROJECT_DIR$/xkcj/xkcj.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xkcj/xkcj-grailsPlugins.iml" filepath="$PROJECT_DIR$/xkcj/xkcj-grailsPlugins.iml" />
     </modules>
   </component>
 </project>
