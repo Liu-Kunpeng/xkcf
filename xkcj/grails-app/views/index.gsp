@@ -126,9 +126,9 @@
 		<!-- lang: js -->
 		appId:"",
 		<!-- lang: js -->
-		MsgImg:"http://www.xikongcaifu.com/images/logowx.jpg",
+		MsgImg:"http://www.xnsee.com/xkcj/images/logowx.jpg",
 		<!-- lang: js -->
-		TLImg:"http://www.xikongcaifu.com/images/logowx.jpg",
+		TLImg:"http://www.xnsee.com/xkcj/images/logowx.jpg",
 		<!-- lang: js -->
 		url:getUrl(),
 		<!-- lang: js -->
