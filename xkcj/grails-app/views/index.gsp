@@ -1,122 +1,243 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta name="layout" content="main"/>
-		<title>Welcome to Grails</title>
-		<style type="text/css" media="screen">
-			#status {
-				background-color: #eee;
-				border: .2em solid #fff;
-				margin: 2em 2em 1em;
-				padding: 1em;
-				width: 12em;
-				float: left;
-				-moz-box-shadow: 0px 0px 1.25em #ccc;
-				-webkit-box-shadow: 0px 0px 1.25em #ccc;
-				box-shadow: 0px 0px 1.25em #ccc;
-				-moz-border-radius: 0.6em;
-				-webkit-border-radius: 0.6em;
-				border-radius: 0.6em;
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+	<title>西控财富祝您春节快乐</title>
+	<style type="text/css">
+
+	div,body{margin:0px;padding:0px;}
+	#div0 { width: 100% }
+	#div1 { width: 100%;position:absolute; z-index:2; text-align: center;color: #f4e600;font-size: 37px;font-weight: 900;}
+	#div2 { width: 100%;position:absolute; z-index:2; text-align: center;color: #f4e600;font-size: 50px;font-weight: 900;}
+	#div3 { width: 100%;position:absolute; z-index:2; text-align: center}
+	#div4 { width: 100%;position:absolute; z-index:2; text-align: center}
+	#div5 { width: 100%;position:absolute; z-index:2; text-align: center;font-size: 35px}
+	div input{
+		font-size: 22px;
+	}
+	</style>
+	<SCRIPT type="text/javascript">
+		String.prototype.replaceAll = function(s1,s2) {
+			return this.replace(new RegExp(s1,"gm"),s2);
+		}
+		function QueryString(item){
+			var sValue=location.search.match(new RegExp("[\?\&]"+item+"=([^\&]*)(\&?)","i"))
+			return sValue?sValue[1]:sValue
+		}
+		function QueryString1(item){
+			var sValue=location.search.match(new RegExp("[\?\&]"+item+"=([^\&]*)(\&?)","i"))
+			//alert(sValue);
+			return sValue?sValue[1]:sValue
+		}
+		var dusername="";
+		var dusername1="";
+		var lusername=QueryString("input1");
+		var lusername1=QueryString1("input2");
+
+		if(lusername){
+			lusername=lusername.replaceAll("!","%");
+			lusername=lusername.replaceAll("%21","%");
+			lusername=unescape(lusername);
+
+			if(!lusername){
+				lusername=dusername;
 			}
+		}else{
+			lusername=dusername;
+		}
 
-			.ie6 #status {
-				display: inline; /* float double margin fix http://www.positioniseverything.net/explorer/doubled-margin.html */
+		if(lusername1){
+			lusername1=lusername1.replaceAll("!","%");
+			lusername1=lusername1.replaceAll("%21","%");
+			lusername1=unescape(lusername1);
+
+			if(!lusername){
+				lusername1=dusername1;
 			}
+		}else{
+			lusername1=dusername1;
+		}
 
-			#status ul {
-				font-size: 0.9em;
-				list-style-type: none;
-				margin-bottom: 0.6em;
-				padding: 0;
+		function check(){
+			obj = document.getElementById("input1").value;
+			obj2 = document.getElementById("input2").value;
+
+			if (obj.length==0) {
+				alert('还没填姓名呀!');
+				return false;
 			}
-
-			#status li {
-				line-height: 1.3;
+			if (obj2.length==0) {
+				alert('还没填联系电话呀!');
+				return false;
 			}
+			obj=escape(obj).replaceAll("%","!");
+			obj2=escape(obj2).replaceAll("%","!");
+			var url="?input1="+obj+"&input2="+obj2;
+			window.location.replace(url);
+			return false
+		}
+		function getUrl(){
+			obj = document.getElementById("input1").value;
+			obj2 = document.getElementById("input2").value;
 
-			#status h1 {
-				text-transform: uppercase;
-				font-size: 1.1em;
-				margin: 0 0 0.3em;
-			}
+			obj=escape(obj).replaceAll("%","!");
+			obj2=escape(obj2).replaceAll("%","!");
+			var url="http://www.xnsee.com/?input1="+obj+"&input2="+obj2;
+			return url
+		}
+	</SCRIPT>
+</head>
 
-			#page-body {
-				margin: 2em 1em 1.25em 18em;
-			}
+<body>
+<div id="div0">
+	<img id="img1" alt="祝您新年快乐！" style="WIDTH: 100%;" src="images/hb.gif">
 
-			h2 {
-				margin-top: 1em;
-				margin-bottom: 0.3em;
-				font-size: 1em;
-			}
 
-			p {
-				line-height: 1.5;
-				margin: 0.25em 0;
-			}
 
-			#controller-list ul {
-				list-style-position: inside;
-			}
 
-			#controller-list li {
-				line-height: 1.3;
-				list-style-position: inside;
-				margin: 0.25em 0;
-			}
+	<div id="div1" ><script>document.write(lusername);</script></div>
+	<div id="div2" ><script>document.write(lusername1);</script></div>
+	<div id="div3" ><input id="input1" placeholder="您的理财经理" maxlength="5"></div>
+	<div id="div4" ><input id="input2" placeholder="您的联络方式" maxlength="13"></div>
+	<div id="div5" ><a style="cursor: pointer" onclick="check();">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
+</div>
 
-			@media screen and (max-width: 480px) {
-				#status {
-					display: none;
-				}
 
-				#page-body {
-					margin: 0 1em 1em;
-				}
+</body>
 
-				#page-body h1 {
-					margin-top: 0;
-				}
-			}
-		</style>
-	</head>
-	<body>
-		<a href="#page-body" class="skip"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div id="status" role="complementary">
-			<h1>Application Status</h1>
-			<ul>
-				<li>App version: <g:meta name="app.version"/></li>
-				<li>Grails version: <g:meta name="app.grails.version"/></li>
-				<li>Groovy version: ${GroovySystem.getVersion()}</li>
-				<li>JVM version: ${System.getProperty('java.version')}</li>
-				<li>Reloading active: ${grails.util.Environment.reloadingAgentEnabled}</li>
-				<li>Controllers: ${grailsApplication.controllerClasses.size()}</li>
-				<li>Domains: ${grailsApplication.domainClasses.size()}</li>
-				<li>Services: ${grailsApplication.serviceClasses.size()}</li>
-				<li>Tag Libraries: ${grailsApplication.tagLibClasses.size()}</li>
-			</ul>
-			<h1>Installed Plugins</h1>
-			<ul>
-				<g:each var="plugin" in="${applicationContext.getBean('pluginManager').allPlugins}">
-					<li>${plugin.name} - ${plugin.version}</li>
-				</g:each>
-			</ul>
-		</div>
-		<div id="page-body" role="main">
-			<h1>Welcome to Grails</h1>
-			<p>Congratulations, you have successfully started your first Grails application! At the moment
-			   this is the default page, feel free to modify it to either redirect to a controller or display whatever
-			   content you may choose. Below is a list of controllers that are currently deployed in this application,
-			   click on each to execute its default action:</p>
-
-			<div id="controller-list" role="navigation">
-				<h2>Available Controllers:</h2>
-				<ul>
-					<g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
-						<li class="controller"><g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link></li>
-					</g:each>
-				</ul>
-			</div>
-		</div>
-	</body>
 </html>
+<script type="text/javascript">
+	window.onload = function() {
+		document.getElementById("div1").style.top= document.getElementById("img1").clientHeight * 0.47 +"px";
+		document.getElementById("div2").style.top= document.getElementById("img1").clientHeight * 0.507 +"px";
+		document.getElementById("div3").style.top= document.getElementById("img1").clientHeight * 0.73 +"px";
+		document.getElementById("div4").style.top= document.getElementById("img1").clientHeight * 0.775 +"px";
+		document.getElementById("div5").style.top= document.getElementById("img1").clientHeight * 0.82 +"px";
+		document.getElementById("input1").style.width= document.getElementById("img1").clientWidth * 0.5 +"px";
+		document.getElementById("input1").style.height= document.getElementById("img1").clientHeight * 0.025 +"px";
+		document.getElementById("input2").style.width= document.getElementById("img1").clientWidth * 0.5 +"px";
+		document.getElementById("input2").style.height= document.getElementById("img1").clientHeight * 0.025 +"px";
+	}
+</script>
+
+<script type="text/javascript">
+	var dataForWeixin={
+		<!-- lang: js -->
+		appId:"",
+		<!-- lang: js -->
+		MsgImg:"http://www.xikongcaifu.com/images/logowx.jpg",
+		<!-- lang: js -->
+		TLImg:"http://www.xikongcaifu.com/images/logowx.jpg",
+		<!-- lang: js -->
+		url:getUrl(),
+		<!-- lang: js -->
+		title:lusername+"祝您新年快乐！",
+		<!-- lang: js -->
+		desc:"我的手机号码是："+lusername1,
+		<!-- lang: js -->
+		fakeid:"",
+		<!-- lang: js -->
+		callback:function(){}
+		<!-- lang: js -->
+	};
+	<!-- lang: js -->
+	(function(){
+		<!-- lang: js -->
+		var onBridgeReady=function(){
+			<!-- lang: js -->
+			WeixinJSBridge.on('menu:share:appmessage', function(argv){
+				<!-- lang: js -->
+				WeixinJSBridge.invoke('sendAppMessage',{
+					<!-- lang: js -->
+					"appid":dataForWeixin.appId,
+					<!-- lang: js -->
+					"img_url":dataForWeixin.MsgImg,
+					<!-- lang: js -->
+					"img_width":"120",
+					<!-- lang: js -->
+					"img_height":"120",
+					<!-- lang: js -->
+					"link":dataForWeixin.url,
+					<!-- lang: js -->
+					"desc":dataForWeixin.desc,
+					<!-- lang: js -->
+					"title":dataForWeixin.title
+					<!-- lang: js -->
+				}, function(res){(dataForWeixin.callback)();});
+				<!-- lang: js -->
+			});
+			<!-- lang: js -->
+			WeixinJSBridge.on('menu:share:timeline', function(argv){
+				<!-- lang: js -->
+				(dataForWeixin.callback)();
+				<!-- lang: js -->
+				WeixinJSBridge.invoke('shareTimeline',{
+					<!-- lang: js -->
+					"img_url":dataForWeixin.TLImg,
+					<!-- lang: js -->
+					"img_width":"120",
+					<!-- lang: js -->
+					"img_height":"120",
+					<!-- lang: js -->
+					"link":dataForWeixin.url,
+					<!-- lang: js -->
+					"desc":dataForWeixin.desc,
+					<!-- lang: js -->
+					"title":dataForWeixin.title
+					<!-- lang: js -->
+				}, function(res){});
+				<!-- lang: js -->
+			});
+			<!-- lang: js -->
+			WeixinJSBridge.on('menu:share:weibo', function(argv){
+				<!-- lang: js -->
+				WeixinJSBridge.invoke('shareWeibo',{
+					<!-- lang: js -->
+					"content":dataForWeixin.title,
+					<!-- lang: js -->
+					"url":dataForWeixin.url
+					<!-- lang: js -->
+				}, function(res){(dataForWeixin.callback)();});
+				<!-- lang: js -->
+			});
+			<!-- lang: js -->
+			WeixinJSBridge.on('menu:share:facebook', function(argv){
+				<!-- lang: js -->
+				(dataForWeixin.callback)();
+				<!-- lang: js -->
+				WeixinJSBridge.invoke('shareFB',{
+					<!-- lang: js -->
+					"img_url":dataForWeixin.TLImg,
+					<!-- lang: js -->
+					"img_width":"120",
+					<!-- lang: js -->
+					"img_height":"120",
+					<!-- lang: js -->
+					"link":dataForWeixin.url,
+					<!-- lang: js -->
+					"desc":dataForWeixin.desc,
+					<!-- lang: js -->
+					"title":dataForWeixin.title
+					<!-- lang: js -->
+				}, function(res){});
+				<!-- lang: js -->
+			});
+			<!-- lang: js -->
+		};
+		<!-- lang: js -->
+		if(document.addEventListener){
+			<!-- lang: js -->
+			document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+			<!-- lang: js -->
+		}else if(document.attachEvent){
+			<!-- lang: js -->
+			document.attachEvent('WeixinJSBridgeReady'   , onBridgeReady);
+			<!-- lang: js -->
+			document.attachEvent('onWeixinJSBridgeReady' , onBridgeReady);
+			<!-- lang: js -->
+		}
+		<!-- lang: js -->
+	})();
+</script>
+
