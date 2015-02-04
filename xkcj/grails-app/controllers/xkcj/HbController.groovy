@@ -12,7 +12,7 @@ class HbController {
     def indexxkhb(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond Hb.list(params), model:[hbInstanceCount: Hb.count()]
-        render(view:'indexxkhb')
+
     }
 
     def step() {
@@ -30,9 +30,32 @@ class HbController {
         if(hhb?.Investors != params.get("Investors")){
             def hb	= new Hb(params)
             hb.save()
+        }else {
+            params.setProperty("moneyManagerPhone",hhb.moneyManagerPhone)
+            params.setProperty("moneyManager",hhb.moneyManager)
         }
         render(view:'hb3', model: [hb:params])
     }
+
+    def list () {
+        check()
+        def headers = ['ID','部门', '理财顾问', '客户姓名','客户地址','客户身份证号码','客户手机','转账日期','投资金额','投资期限','计息日','到期日','合同编号','文件','操作人']
+        def withProperties = ['id','department', 'manageFinances', 'guestName','guestAddress','guestVid','guestPhone','transferDate','fundSum','fundLimit','interestDate','overDate','compactId','compactFile','operate']
+        def checkIds=request.getParameterValues("myCheckbox")
+        List listIds = Arrays.asList(checkIds);
+
+        new WebXlsxExporter().with {
+            setResponseHeaders(response)
+            fillHeader(headers)
+            add(Stakeinfo.findAllByIdInList(listIds), withProperties)
+            save(response.outputStream)
+        }
+
+
+
+    }
+
+
     def show(Hb hbInstance) {
         respond hbInstance
     }

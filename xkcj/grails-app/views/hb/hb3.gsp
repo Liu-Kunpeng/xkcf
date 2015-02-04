@@ -9,8 +9,8 @@
     <style type="text/css">
     div,body{margin:0px;padding:0px;}
     #div0 { width: 100% }
-    #div1 { width: 100%;position:absolute; z-index:2; text-align: center;color: #f4e600;font-size: 90px;font-weight: 900;}
-    #div2 { width: 100%;position:absolute; z-index:2; text-align: center;color: #f4e600;font-size: 100px;font-weight: 900;}
+    #div1 { width: 100%;position:absolute; z-index:2; text-align: center;color: #f4e600;font-size: 45px;font-weight: 900;}
+    #div2 { width: 100%;position:absolute; z-index:2; text-align: center;color: #f4e600;font-size: 50px;font-weight: 900;}
 
     </style>
 
@@ -23,8 +23,11 @@
 
 
 
-    <div id="div1" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${hb?.moneyManager}</div>
-    <div id="div2" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${hb?.moneyManagerPhone}</div>
+    <div id="div1" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${hb?.moneyManager}</div>
+    <div id="div2" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${hb?.moneyManagerPhone}</div>
 </div>
 <audio controls autoplay loop style="height: 0;">
     <source src="${resource(dir: '', file: 'a.mp3')}" type="audio/mp3" loop="true">
