@@ -10,6 +10,7 @@
     div,body{margin:0px;padding:0px;}
     #div0 { width: 100% }
     #div3 { width: 100%;position:absolute; z-index:2; text-align: center}
+    #div4 { width: 100%;position:absolute; z-index:2; text-align: center}
     #div5 { width: 100%;position:absolute; z-index:2; text-align: center;font-size: 215px}
     div input{
         font-size: 52px;
@@ -69,10 +70,14 @@
 
         function check(){
             obj2 = document.getElementById("input1").value;
+            obj3 = document.getElementById("input2").value;
+            if (obj3.length==0) {
+                alert('还没填您的姓名呀!');
+                return false;
+            }
 
-
-            if (obj2.length==0) {
-                alert('还没填联系电话呀!');
+            if (obj2.length < 11) {
+                alert('填写的手机号码不正确！!');
                 return false;
             }
             document.getElementById("form1").submit();
@@ -94,7 +99,8 @@
         document.getElementById("inp1").value=lusername;
         document.getElementById("inp2").value=lusername1;
     </script>
-    <div id="div3" ><input id="input1" placeholder="输入您的手机号码，领取红包大礼！" maxlength="13" name="Investors"></div>
+    <div id="div4" ><input id="input2" placeholder="输入您的姓名！" maxlength="13" name="InvestorsPhone"></div>
+    <div id="div3" ><input id="input1" placeholder="输入您的手机号码,领红包大礼！" maxlength="11"  type="number" name="Investors"></div>
     <div id="div5" ><a style="cursor: pointer" onclick="check();">&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
 
 </div>
@@ -109,9 +115,12 @@
 </html>
 <script type="text/javascript">
     window.onload = function() {
-        document.getElementById("div3").style.top= document.getElementById("img1").clientHeight * 0.786 +"px";
+        document.getElementById("div3").style.top= document.getElementById("img1").clientHeight * 0.796 +"px";
+        document.getElementById("div4").style.top= document.getElementById("img1").clientHeight * 0.736 +"px";
         document.getElementById("div5").style.top= document.getElementById("img1").clientHeight * 0.845 +"px";
         document.getElementById("input1").style.width= document.getElementById("img1").clientWidth * 0.76 +"px";
         document.getElementById("input1").style.height= document.getElementById("img1").clientHeight * 0.039 +"px";
+        document.getElementById("input2").style.width= document.getElementById("img1").clientWidth * 0.76 +"px";
+        document.getElementById("input2").style.height= document.getElementById("img1").clientHeight * 0.039 +"px";
     }
 </script>

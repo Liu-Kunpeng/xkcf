@@ -1,6 +1,6 @@
 package xkcj
 
-
+import pl.touk.excel.export.WebXlsxExporter
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
@@ -11,10 +11,13 @@ class HbController {
 
     def indexxkhb(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond Hb.list(params), model:[hbInstanceCount: Hb.count()]
+        respond Hb.list(params), model:[hbInstanceCount: Hb.count()],view: "indexxkhb"
 
     }
-
+    def query(Integer max) {
+        params.max = Math.min(max ?: 10, 100)
+        respond Hb.list(params), model:[hbInstanceCount: Hb.count()] ,view: "indexxkhb"
+    }
     def step() {
 
         //render(view:'hbsend',model:[file:filesName])
@@ -37,17 +40,14 @@ class HbController {
         render(view:'hb3', model: [hb:params])
     }
 
-    def list () {
-        check()
-        def headers = ['ID','部门', '理财顾问', '客户姓名','客户地址','客户身份证号码','客户手机','转账日期','投资金额','投资期限','计息日','到期日','合同编号','文件','操作人']
-        def withProperties = ['id','department', 'manageFinances', 'guestName','guestAddress','guestVid','guestPhone','transferDate','fundSum','fundLimit','interestDate','overDate','compactId','compactFile','operate']
-        def checkIds=request.getParameterValues("myCheckbox")
-        List listIds = Arrays.asList(checkIds);
+    def listExcel () {
+        def headers = ['ID','投资人手机号码', '理财经理', '理财经理电话']
+        def withProperties = ['id','Investors', 'moneyManager', 'moneyManagerPhone']
 
         new WebXlsxExporter().with {
             setResponseHeaders(response)
             fillHeader(headers)
-            add(Stakeinfo.findAllByIdInList(listIds), withProperties)
+            add(Hb.findAll(), withProperties)
             save(response.outputStream)
         }
 
