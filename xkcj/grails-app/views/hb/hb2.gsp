@@ -100,7 +100,7 @@
         document.getElementById("inp2").value=lusername1;
     </script>
     <div id="div4" ><input id="input2" placeholder="输入您的姓名！" maxlength="13" name="InvestorsPhone"></div>
-    <div id="div3" ><input id="input1" placeholder="输入您的手机号码,领红包大礼！" maxlength="11"  type="number" name="Investors"></div>
+    <div id="div3" ><input id="input1" placeholder="输入您的手机号码,领红包大礼！" maxlength="11"   name="Investors"></div>
     <div id="div5" ><a style="cursor: pointer" onclick="check();">&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
 
 </div>

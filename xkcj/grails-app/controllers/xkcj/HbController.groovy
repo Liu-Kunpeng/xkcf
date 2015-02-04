@@ -41,8 +41,8 @@ class HbController {
     }
 
     def listExcel () {
-        def headers = ['ID','投资人手机号码', '理财经理', '理财经理电话']
-        def withProperties = ['id','Investors', 'moneyManager', 'moneyManagerPhone']
+        def headers = ['ID','投资人','投资人手机号码', '理财经理', '理财经理电话']
+        def withProperties = ['id','InvestorsPhone','Investors', 'moneyManager', 'moneyManagerPhone']
 
         new WebXlsxExporter().with {
             setResponseHeaders(response)

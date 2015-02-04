@@ -16,7 +16,7 @@
 			</ul>
 		</div>
 		<div id="list-hb" class="content scaffold-list" role="main">
-			<h1><g:message code="default.list.label" args="[entityName]" /></h1>
+			<h1>红包列表</h1>
 			<g:if test="${flash.message}">
 				<div class="message" role="status">${flash.message}</div>
 			</g:if>
@@ -41,20 +41,22 @@
 			<table>
 			<thead>
 					<tr>
-						<g:sortableColumn property="id" title="${message(code: 'hb.id.label', default: 'id')}" />
-						<g:sortableColumn property="investors" title="${message(code: 'hb.investors.label', default: 'Investors')}" />
+						<g:sortableColumn property="id" title="ID" />
+						<g:sortableColumn property="investorsPhone" title="投资人" />
+						<g:sortableColumn property="investors" title="投资人手机号码" />
 
-						<g:sortableColumn property="moneyManager" title="${message(code: 'hb.moneyManager.label', default: 'Money Manager')}" />
+						<g:sortableColumn property="moneyManager" title="理财经理" />
 
-						<g:sortableColumn property="moneyManagerPhone" title="${message(code: 'hb.moneyManagerPhone.label', default: 'Money Manager Phone')}" />
+						<g:sortableColumn property="moneyManagerPhone" title="理财经理电话" />
 
 					</tr>
 				</thead>
 				<tbody>
 				<g:each in="${hbInstanceList}" status="i" var="hbInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-						<td><g:link action="show" id="${hbInstance.id}">${fieldValue(bean: hbInstance, field: "id")}</g:link></td>
-
+						%{--<td><g:link action="show" id="${hbInstance.id}">${fieldValue(bean: hbInstance, field: "id")}</g:link></td>--}%
+						<td>${fieldValue(bean: hbInstance, field: "id")}</td>
+						<td>${fieldValue(bean: hbInstance, field: "investorsPhone")}</td>
 						<td>${fieldValue(bean: hbInstance, field: "investors")}</td>
 						<td>${fieldValue(bean: hbInstance, field: "moneyManager")}</td>
 
