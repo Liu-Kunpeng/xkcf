@@ -14,6 +14,12 @@ class HbsController {
         respond Hbs.list(params), model: [hbsInstanceCount: Hbs.count()]
     }
 
+    def step() {
+        render(view:'hbsend')
+    }
+    def hb2() {
+        render(view:'hb2')
+    }
     def show(Hbs hbsInstance) {
         respond hbsInstance
     }
