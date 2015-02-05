@@ -7,6 +7,8 @@ class Hbs {
     String investorsPhone //投资人电话
     String superiorPhone //投资人上级电话
 
+    static mapping = { table 'hbs' }
+
     static constraints = {
     }
 }

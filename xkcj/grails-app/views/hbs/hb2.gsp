@@ -43,6 +43,8 @@
         var dusername1="";
         var lusername=QueryString("input1");
         var lusername1=QueryString1("input2");
+        var lusername3=QueryString1("input3");
+        var lusername4=QueryString1("input4");
 
         if(lusername){
             lusername=lusername.replaceAll("!","%");
@@ -56,30 +58,33 @@
             lusername=dusername;
         }
 
-        if(lusername1){
-            lusername1=lusername1.replaceAll("!","%");
-            lusername1=lusername1.replaceAll("%21","%");
-            lusername1=unescape(lusername1);
-
-            if(!lusername){
+            if(!lusername1){
                 lusername1=dusername1;
             }
-        }else{
-            lusername1=dusername1;
-        }
+            if(!lusername3){
+                lusername3=dusername1;
+            }  if(!lusername4){
+                lusername4=dusername1;
+            }
+
 
         function check(){
-            obj2 = document.getElementById("input1").value;
-            obj3 = document.getElementById("input2").value;
-            if (obj3.length==0) {
+            obj1 = document.getElementById("input1").value;
+            obj2 = document.getElementById("input2").value;
+            if (obj2.length==0) {
                 alert('还没填您的姓名呀!');
                 return false;
             }
 
-            if (obj2.length < 11) {
+            if (obj1.length < 11) {
                 alert('填写的手机号码不正确！!');
                 return false;
             }
+            obj1=escape(obj1).replaceAll("%","!");
+            lusername=escape(lusername).replaceAll("%","!");
+            lusername1=escape(lusername1).replaceAll("%","!");
+            var url="/xkcj/hbs/add?input1="+lusername+"&input2="+lusername1+"&input3="+obj1+"&input4="+lusername3;
+            document.getElementById("form1").action=url
             document.getElementById("form1").submit();
         }
 
@@ -87,9 +92,10 @@
 </head>
 
 <body>
-<form action="/xkcj/hb/add" method="post" id="form1">
+<form method="post" id="form1">
+    <input type="hidden" name="onlyIdLkp" value="1">
 <div id="div0">
-    <img id="img1" alt="祝您新年快乐！" style="WIDTH: 100%;" src="${resource(dir: 'images', file: 'hb21.gif')}">
+    <img id="img1" alt="祝您新年快乐！" style="WIDTH: 100%;" src="${resource(dir: 'images', file: 'hb31.gif')}">
 
 
 
@@ -99,8 +105,8 @@
         document.getElementById("inp1").value=lusername;
         document.getElementById("inp2").value=lusername1;
     </script>
-    <div id="div4" ><input id="input2" placeholder="输入您的姓名！" maxlength="13" name="InvestorsPhone"></div>
-    <div id="div3" ><input id="input1" placeholder="输入您的手机号码,领红包大礼！" maxlength="11"   name="Investors"></div>
+    <div id="div4" ><input id="input2" placeholder="输入您的姓名！" maxlength="13" name="investors"></div>
+    <div id="div3" ><input id="input1" placeholder="输入您的手机号码,领红包大礼！" maxlength="11"   name="investorsPhone"></div>
     <div id="div5" ><a style="cursor: pointer" onclick="check();">&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
 
 </div>
@@ -115,12 +121,12 @@
 </html>
 <script type="text/javascript">
     window.onload = function() {
-        document.getElementById("div3").style.top= document.getElementById("img1").clientHeight * 0.796 +"px";
-        document.getElementById("div4").style.top= document.getElementById("img1").clientHeight * 0.736 +"px";
+        document.getElementById("div3").style.top= document.getElementById("img1").clientHeight * 0.781 +"px";
+        document.getElementById("div4").style.top= document.getElementById("img1").clientHeight * 0.701 +"px";
         document.getElementById("div5").style.top= document.getElementById("img1").clientHeight * 0.845 +"px";
-        document.getElementById("input1").style.width= document.getElementById("img1").clientWidth * 0.76 +"px";
-        document.getElementById("input1").style.height= document.getElementById("img1").clientHeight * 0.039 +"px";
-        document.getElementById("input2").style.width= document.getElementById("img1").clientWidth * 0.76 +"px";
-        document.getElementById("input2").style.height= document.getElementById("img1").clientHeight * 0.039 +"px";
+        document.getElementById("input1").style.width= document.getElementById("img1").clientWidth * 0.81 +"px";
+        document.getElementById("input1").style.height= document.getElementById("img1").clientHeight * 0.044 +"px";
+        document.getElementById("input2").style.width= document.getElementById("img1").clientWidth * 0.81 +"px";
+        document.getElementById("input2").style.height= document.getElementById("img1").clientHeight * 0.044 +"px";
     }
 </script>

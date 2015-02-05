@@ -4,7 +4,6 @@ package xkcj
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
-@Transactional(readOnly = true)
 class HbsController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
@@ -19,6 +18,46 @@ class HbsController {
     }
     def hb2() {
         render(view:'hb2')
+    }
+    def hb4() {
+        if (!params.get("onlyIdLkp")?.equals("1")){
+            return  hb2()
+        }
+        render(view:'hb4')
+    }
+    def hb5() {
+        if (!params.get("onlyIdLkp")?.equals("1")){
+          return  hb2()
+        }
+        render(view:'hb5')
+    }
+    def add() {
+        if (!params.get("onlyIdLkp")?.equals("1")){
+            return  hb2()
+        }
+         Hbs hhb=Hbs.findByInvestorsPhone(params.get("investorsPhone"));
+        if(hhb?.investorsPhone != params.get("investorsPhone")){
+            def hbs	= new Hbs(params)
+            hbs.superiorPhone=params.get("input4")
+            hbs.save()
+            hhb.superiorPhone=hbs?.superiorPhone
+        }else {
+            params.setProperty("moneyManagerPhone",hhb.moneyManagerPhone)
+            params.setProperty("moneyManager",hhb.moneyManager)
+        }
+
+        Hbs superior1=Hbs.findByInvestorsPhone(hhb.superiorPhone)
+        Hbs superior2=Hbs.findByInvestorsPhone(superior1?.superiorPhone)
+        Hbs superior3=Hbs.findByInvestorsPhone(superior2?.superiorPhone)
+        params.setProperty("superior1",superiorChange(superior1))
+        params.setProperty("superior2",superiorChange(superior2))
+        params.setProperty("superior3",superiorChange(superior3))
+
+        render(view:'hb3', model: [hbs:params])
+    }
+
+    def superiorChange(Hbs superior){
+        superior!=null?(superior?.investors.substring(0,1)+"*"+":"+superior?.investorsPhone.substring(0,3)+"XXXX"+superior?.investorsPhone.substring(7,11)+" 拱到200元红包！"  ):""
     }
     def show(Hbs hbsInstance) {
         respond hbsInstance
