@@ -5,4 +5,3 @@ class Hbs {
     static constraints = {
     }
 }
-`
