@@ -27,7 +27,7 @@ environments {
     development {
         dataSource {
             logSql = true
-            // dbCreate = "create" // one of 'create', 'create-drop', 'update', 'validate', ''
+             dbCreate = "create" // one of 'create', 'create-drop', 'update', 'validate', ''
             url = "jdbc:mysql://121.40.50.104:3306/xkcj?userUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull"
         }
 
